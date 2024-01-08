@@ -1,0 +1,397 @@
+/* Base Resets and Font Setup */
+/* CSS */
+/* CSS */
+/*scroll animation*/
+/* CSS */
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.project {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+/* Add a class that will be toggled via JavaScript */
+.project.slide-in {
+  animation: slideInFromLeft 0.5s forwards;
+  /* Use animation-delay in JavaScript to stagger the animations */
+}
+
+
+/* Adjust the animation for mobile */
+@media (max-width: 768px) {
+  .project {
+    /* Adjust the starting point of the animation to be closer */
+    transform: translateX(-50%);
+  }
+
+  .project.slide-in {
+    /* Use a quicker animation duration for mobile */
+    animation: slideInFromLeft 0.3s forwards;
+  }
+}
+
+
+
+
+.home img {
+  animation: movingCrop 10s linear infinite;
+}
+
+
+
+
+.scroll-grow {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.5s ease-in-out;
+}
+
+.scroll-grow.grow {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+
+
+
+/*home animation*/
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  50% { border-color: transparent; }
+}
+
+.home h1 {
+  overflow: hidden;
+  border-right: 0.15em solid black;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.15em;
+  animation: typing 3.5s steps(20, end), blink-caret 0.5s step-end 2.0s;
+  animation-fill-mode: forwards;
+}
+
+/* After the typing animation ends, stop the blink */
+.home h1::after {
+  animation: none;
+  border-color: transparent;
+}
+
+
+/* Cursor Blink Animation */
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: black; }
+}
+
+
+@keyframes smoothFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home img {
+  animation: smoothFadeInUp 2s ease-out forwards;
+}
+
+
+/* Set different delays for each element */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.skill-logo {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+
+  
+}
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #fff;
+  color: #333;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* Header Styles */
+header {
+  
+  color: white;
+  padding: 0.5rem;
+  text-align: center;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10%; /* Align nav items to the layout's padding */
+}
+.buttons {
+  background-color: rgb(0, 0, 0);
+  border: none;
+  padding: 0.2rem 0.4rem;
+  color: rgb(255, 255, 255);
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 5px;
+}
+.buttons:hover {
+  background-color: rgb(180, 190, 200);
+}
+
+/* Intro and Flex Container Styles */
+.intro-container {
+  justify-content: flex;
+  padding: 40px 10%;
+  padding-bottom: 50px;
+  
+}
+.flex-container {
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: baseline;
+  margin-top: 40px;
+  
+}
+@media (max-width: 768px) {
+  .flex-container {
+      flex-direction: column;
+      align-items: center;
+  }
+}
+
+/* Home Section Styles */
+.home {
+  text-align: center;
+}
+.home img {
+  max-width: 35%;
+  height: auto;
+  margin-top: 20px;
+  border-radius: 5%;
+  
+}
+@media (max-width: 768px) {
+  .home img {
+      max-width: 80%;
+      margin-top: 20px;
+  }
+}
+
+/* Skills Section Styles */
+.skills {
+  text-align: center;
+  
+  width: 100%; /* Adjust the width as necessary */
+}
+.skill-set {
+  display: flex;
+  
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  text-align: left;
+  
+}
+.skill-logo {
+  width: 50px;
+  height: auto;
+  margin-right: 15px;
+  text-align: center;
+}
+.skills span {
+  font-size: 1.2em;
+}
+
+/* About Me Section Styles */
+.aboutdd {
+ 
+  width: 100%; /* Adjust the width as necessary */
+  text-align: center;
+  margin-top: 0%;
+  display: flex;
+  justify-content: center;
+}
+
+.aboutdd {
+  /* Keep your existing styles */
+  display: flex; /* Use flexbox to center the child paragraph */
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;
+  text-align: center;
+  /* Center the child paragraph horizontally */
+}
+
+.aboutdd .ab-me-p {
+  max-width: 300px; /* Or whatever width you prefer */
+  /* If you want some space around the paragraph, you can add padding */
+  padding: 0 20px;
+  text-align: center; /* If you want the text to be justified */
+}
+
+ 
+.abs { width: 10%;
+  height: auto;
+}
+
+/*.aboutdd {
+  margin-top: 0px;
+  margin-left: 350px;
+}*/
+
+@media only screen and (max-width: 768px) {
+  .aboutdd {
+    width: 48%;
+      margin: 0; /* Resets the margin for mobile */
+      /* other styles necessary for mobile */
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .skills {
+      margin: 0; 
+      width: 48%;
+      /* Resets the margin for mobile */
+      /* other styles necessary for mobile */
+  }
+}
+
+/* Portfolio Section Styles */
+.portfolio {
+  
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  background-color: #f3f1f1;
+  padding: 40px 10%;
+  color: rgb(0, 0, 0);
+}
+
+.project {
+  background-color: white;
+  border: rgb(0, 0, 0);
+  border-width: 10px;
+}
+
+.portfolio .project {
+  flex: 0 1 calc(25% - 20px); /* Adjust size and spacing of each project */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.project img {
+  width: 100%; /* Make images fill the container */
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.project h3, .project p {
+  display: block;
+  text-align: center;
+}
+
+.project-h2 {
+  display: block;
+  text-align: center;
+}
+
+/* Hover effect for projects */
+.project:hover {
+  transform: translateY(-10px);
+}
+
+.project:hover img {
+  transform: scale(1.05);
+}
+
+
+
+@media (max-width: 768px) {
+  .portfolio .project {
+    flex: 0 1 calc(50% - 20px); /* Larger items on smaller screens */
+  }
+}
+
+
+/* Testimonials Section Styles */
+.testimonials {
+  background-color: #fff;
+  padding: 40px 10%;
+}
+.testimonials .testimonial {
+  margin: 20px 0;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Blog Section Styles */
+.blog {
+  background-color: #f9f9f9;
+  padding: 40px 10%;
+}
+.blog .blog-post {
+  margin: 20px 0;
+}
+
+/* Contact Section Styles */
+.contact {
+  background-color: #fff;
+  padding: 40px 10%;
+}
+.contact form {
+  max-width: 500px;
+  margin: auto;
+}
+
+/* Footer Styles */
+footer {
+  background: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
